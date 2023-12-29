@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Blog Post - Start Bootstrap Template</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="./static/assets/favicon.ico" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="./static/css/styles.css" rel="stylesheet" />
+  <style>
+    .standard-image {
+      width: 300px; /* Set the desired width */
+      height: 300px; /* Set the desired height */
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .col-lg-8 {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+    }
+
+    .col-lg-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+
+    #map {
+      height: 300px; /* Adjust the height of the map container */
+      width: 100%;   /* Make the map container take the full width */
+      margin-bottom: 20px; /* Add some bottom margin for spacing */
+    }
+
+    #tomtom-map-image {
+      max-width: 100%; /* Make the TomTom map image take the full width */
+      height: auto;    /* Maintain the aspect ratio */
+      display: block;  /* Remove any potential spacing below the image */
+      margin-top: 10px; /* Add some top margin for spacing */
+    }
+  </style>
+</head>
+<body>
+  <!-- Page content-->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- Post content-->
+        <article>
+          <!-- Post header-->
+          <header class="mb-4">
+            <!-- Post title-->
+            <h1 class="fw-bolder mb-1">{{ venue_data['venue_name'] }}</h1>
+            <!-- Post meta content-->
+            <div class="text-muted fst-italic mb-2">last updated: {{ venue_data['last_updated'] }}</div>
+          </header>
+          <!-- Preview image figure-->
+          <figure class="mb-4"><img class="img-fluid rounded standard-image" src="{{ venue_data['venue_img_link'] }}" alt="..." /></figure>
+          <!-- Post content-->
+          <section class="mb-5">
+            <p class="fs-5 mb-4">Address: {{ venue_data['venue_address'] }}</a></p>
+            <p class="fs-5 mb-4">Website: <a href="{{ venue_data['venue_url'] }}"> {{ venue_data['venue_url'] }} </a></p>
+            <p class="fs-5 mb-4">Venue Management Ease (out of 5): {{ venue_data['venue_owner'] }}</p>
+            <p class="fs-5 mb-4">Indoor/Outdoor: {{ venue_data['venue_indoor'] }}</p>
+            <p class="fs-5 mb-4">On-site refrigeration? (y/n): {{ venue_data['venue_refrigeration'] }}</p>
+            <p class="fs-5 mb-4">On-site cooking facilities? (y/n): {{ venue_data['venue_can_cook'] }}</p>
+            <p class="fs-5 mb-4">Service entrance? (y/n): {{ venue_data['venue_back_entrance'] }}</p>
+            <p class="fs-5 mb-4">Service area size (s/m/lg): {{ venue_data['venue_service_area_size'] }}</p>
+          </section>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        <!-- TomTom Map Image -->
+        <div id="map"></div>
+        <img id="tomtom-map-image" src="{{ venue_data['map_image_url'] }}" alt="TomTom Map" class="img-fluid mt-3" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>
