@@ -1,3 +1,7 @@
+# TODO: add edit functionality
+# TODO: clean up unused template bits
+# TODO: use nicer css
+
 from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap5
 from forms import VenueForm
