@@ -6,9 +6,11 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap5
 from forms import VenueForm
 from datetime import datetime
+from dotenv import load_dotenv
 import csv
 import os
 import requests
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "4SlaZdAmjtYDyMlz8XuYRaABzBVDIgwY"
